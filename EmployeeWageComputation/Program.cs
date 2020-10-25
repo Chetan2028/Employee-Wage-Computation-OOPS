@@ -42,6 +42,7 @@ namespace EmployeeWageComputation
 
             Console.WriteLine("Employee Daily Wage is : " + totalEmployeeHours * EMPLOYEE_WAGE_PER_HOUR);
         }
+
         /// <summary>
         /// Defines the entry point of the application.
         /// </summary>
