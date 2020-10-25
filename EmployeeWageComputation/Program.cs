@@ -4,24 +4,30 @@ namespace EmployeeWageComputation
 {
     class Program
     {
-        ///Variables
+        ///Constants
         const int IS_PRESENT = 1;
+        const int EMPLOYEE_WAGE_PER_HOUR = 20;
+
+
+        /// Creates a reference of Random Class
+        Random random = new Random();
 
         /// <summary>
         /// Checks for employee presence.
         /// </summary>
-        public void CheckForEmployeePresence()
+        public void CalculateDailyWage()
         {
-            Random random = new Random();
             int empCheck = random.Next(2);
+            int employeeHours;
             if (empCheck == IS_PRESENT)
             {
-                Console.WriteLine("Employee is Present");
+                employeeHours = 8;
             }
             else
             {
-                Console.WriteLine("Employee is Absent");
+                employeeHours = 0;
             }
+            Console.WriteLine("Employee Daily Wage is : " + employeeHours * EMPLOYEE_WAGE_PER_HOUR);
         }
         /// <summary>
         /// Defines the entry point of the application.
@@ -30,7 +36,7 @@ namespace EmployeeWageComputation
         static void Main(string[] args)
         {
             Program program = new Program();
-            program.CheckForEmployeePresence();
+            program.CalculateDailyWage();
         }
     }
 }
