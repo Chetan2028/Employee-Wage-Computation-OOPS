@@ -14,7 +14,7 @@ namespace EmployeeWageComputation
         Random random = new Random();
 
         /// <summary>
-        /// Checks for employee presence.
+        /// Calculates the daily wage for part time employee.
         /// </summary>
         public void CalculateDailyWageForPartTimeEmployee()
         {
