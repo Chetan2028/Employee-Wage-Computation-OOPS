@@ -16,24 +16,24 @@ namespace EmployeeWageComputation
         /// <summary>
         /// Calculates the daily wage for part time employee.
         /// </summary>
-        public void CalculateDailyWage()
+        public void CalculateDailyWageUsingSwitch()
         {
-            int empCheck = random.Next(2);
-            int employeeHours;
-            if (empCheck == IS_FULL_TIME)
+            int empCheck = random.Next(3);
+            int employeeHours = 0;
+            switch (empCheck)
             {
-                employeeHours = 8;
-                Console.WriteLine("Employee is Full Time");
-            }
-            else if (empCheck == IS_PART_TIME)
-            {
-                employeeHours = 4;
-                Console.WriteLine("Employee is Part Time");
-            }
-            else
-            {
-                employeeHours = 0;
-                Console.WriteLine("Employee is Absent");
+                case IS_PART_TIME:
+                    Console.WriteLine("EMployee is part timee");
+                    employeeHours = 4;
+                    break;
+                case IS_FULL_TIME:
+                    Console.WriteLine("Employee is Full Time");
+                    employeeHours = 8;
+                    break;
+                default:
+                    Console.WriteLine("Employee is Absent");
+                    employeeHours = 0;
+                    break;
             }
             Console.WriteLine("Employee Daily Wage is : " + employeeHours * EMPLOYEE_WAGE_PER_HOUR);
         }
@@ -44,7 +44,7 @@ namespace EmployeeWageComputation
         static void Main(string[] args)
         {
             Program program = new Program();
-            program.CalculateDailyWage();
+            program.CalculateDailyWageUsingSwitch();
         }
     }
 }
