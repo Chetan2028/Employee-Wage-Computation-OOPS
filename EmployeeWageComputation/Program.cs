@@ -5,7 +5,8 @@ namespace EmployeeWageComputation
     class Program
     {
         ///Constants
-        const int IS_PRESENT = 1;
+        const int IS_FULL_TIME = 2;
+        const int IS_PART_TIME = 1;
         const int EMPLOYEE_WAGE_PER_HOUR = 20;
 
 
@@ -15,17 +16,24 @@ namespace EmployeeWageComputation
         /// <summary>
         /// Checks for employee presence.
         /// </summary>
-        public void CalculateDailyWage()
+        public void CalculateDailyWageForPartTimeEmployee()
         {
             int empCheck = random.Next(2);
             int employeeHours;
-            if (empCheck == IS_PRESENT)
+            if (empCheck == IS_FULL_TIME)
             {
                 employeeHours = 8;
+                Console.WriteLine("Employee is Full Time");
+            }
+            else if(empCheck == IS_PART_TIME)
+            {
+                employeeHours = 4;
+                Console.WriteLine("Employee is Part Time");
             }
             else
             {
                 employeeHours = 0;
+                Console.WriteLine("Employee is Absent");
             }
             Console.WriteLine("Employee Daily Wage is : " + employeeHours * EMPLOYEE_WAGE_PER_HOUR);
         }
@@ -36,7 +44,7 @@ namespace EmployeeWageComputation
         static void Main(string[] args)
         {
             Program program = new Program();
-            program.CalculateDailyWage();
+            program.CalculateDailyWageForPartTimeEmployee();
         }
     }
 }
