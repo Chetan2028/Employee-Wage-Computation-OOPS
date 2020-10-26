@@ -7,9 +7,6 @@ namespace EmployeeWageComputation
         ///Constants
         const int IS_FULL_TIME = 2;
         const int IS_PART_TIME = 1;
-        const int EMPLOYEE_WAGE_PER_HOUR = 20;
-        const int MAXIMUM_WORKING_HOURS = 100;
-        const int MAXIMUM_WORKING_DAYS = 20;
 
         /// Creates a reference of Random Class
         Random random = new Random();
@@ -17,13 +14,13 @@ namespace EmployeeWageComputation
         /// <summary>
         /// Calculates the daily wage for part time employee.
         /// </summary>
-        public void CalculateMonthlyWages()
+        public void CalculateMonthlyWages(string company, int workingDays, int workingHours, int empRatePerHour)
         {
             int employeeHours = 0;
             int totalEmployeeHours = 0;
             int totalWorkingDays = 0;
             
-            while (totalWorkingDays < MAXIMUM_WORKING_DAYS && totalEmployeeHours < MAXIMUM_WORKING_HOURS)
+            while (totalWorkingDays < workingDays && totalEmployeeHours < workingHours)
             {
                 totalWorkingDays++;
                 int empCheck = random.Next(3);
@@ -44,7 +41,7 @@ namespace EmployeeWageComputation
                 }
                 totalEmployeeHours += employeeHours;
             }
-            Console.WriteLine("Employee Daily Wage is : " + totalEmployeeHours * EMPLOYEE_WAGE_PER_HOUR);
+            Console.WriteLine("Employee wage for " + company + " is " + totalEmployeeHours * empRatePerHour);
 
         }
 
@@ -55,7 +52,8 @@ namespace EmployeeWageComputation
         static void Main(string[] args)
         {
             Program program = new Program();
-            program.CalculateMonthlyWages();
+            program.CalculateMonthlyWages("Google",20,60,50);
+            program.CalculateMonthlyWages("Facebook", 24, 100, 30);
         }
     }
 }
