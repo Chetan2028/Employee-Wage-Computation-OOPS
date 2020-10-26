@@ -45,6 +45,7 @@ namespace EmployeeWageComputation
                 totalEmployeeHours += employeeHours;
             }
             Console.WriteLine("Employee Daily Wage is : " + totalEmployeeHours * EMPLOYEE_WAGE_PER_HOUR);
+
         }
 
         /// <summary>
